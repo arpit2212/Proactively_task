@@ -115,7 +115,7 @@ const Navbar = () => {
         {/* Close Button */}
         <div className="mobile-nav-header">
           <div className="mobile-logo">
-        <img src="../../../src/assets/Logo/Logo.png" alt="ProVital Logo" className="logo-icon" />
+        <img src={logo} alt="ProVital Logo" className="logo-icon" />
             <span className="logo-text">ProVital</span>
           </div>
           <button onClick={toggleMenu} className="close-button">
