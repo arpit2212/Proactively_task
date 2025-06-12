@@ -1,5 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
+// Import all images
+import nutritionImage from '../../assets/MainPage/Cards/Nutrition.png';
+import physicalActivityImage from '../../assets/MainPage/Cards/PhysicalActivity.png';
+import sleepImage from '../../assets/MainPage/Cards/RetrospectiveSleep.png';
+import stressImage from '../../assets/MainPage/Cards/StressManagment.png';
+import socialImage from '../../assets/MainPage/Cards/SocialConnect.png';
+import substanceImage from '../../assets/MainPage/Cards/SubstanceAbuse.png';
+
+import nutritionIcon from '../../assets/MainPage/Cards/UnitIcon/Nutrition.png';
+import physicalIcon from '../../assets/MainPage/Cards/UnitIcon/PhysicalActivity.png';
+import sleepIcon from '../../assets/MainPage/Cards/UnitIcon/RetrospectiveSleep.png';
+import stressIcon from '../../assets/MainPage/Cards/UnitIcon/StressManagment.png';
+import socialIcon from '../../assets/MainPage/Cards/UnitIcon/SocialConnection.png';
+import substanceIcon from '../../assets/MainPage/Cards/UnitIcon/SubstanceAbuse.png';
+
 const MainPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -11,10 +26,8 @@ const MainPage = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -23,55 +36,55 @@ const MainPage = () => {
       id: 1,
       title: "Nutrition",
       description: "Evidence supports the use of a whole food, plant-predominant diet to prevent, treat and reverse chronic illness.",
-      image: "../../../src/assets/MainPage/Cards/Nutrition.png",
+      image: nutritionImage,
       duration: "121/80",
       unit: "mmHg",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/Nutrition.png"
+      unit_img: nutritionIcon
     },
     {
       id: 2,
       title: "Physical activity",
       description: "Regular physical activity is key to managing weight, improving mental health, and reducing risk of chronic disease.",
-      image: "../../../src/assets/MainPage/Cards/PhysicalActivity.png",
+      image: physicalActivityImage,
       duration: "32",
       unit: "minutes",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/PhysicalActivity.png"
+      unit_img: physicalIcon
     },
     {
       id: 3,
       title: "Restorative sleep",
       description: "Consistent, quality sleep is fundamental to physical health, mental clarity, and emotional well-being.",
-      image: "../../../src/assets/MainPage/Cards/RetrospectiveSleep.png",
+      image: sleepImage,
       duration: "8",
       unit: "hours",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/RetrospectiveSleep.png"
+      unit_img: sleepIcon
     },
     {
       id: 4,
       title: "Stress management",
       description: "Effective stress management techniques help reduce anxiety, improve focus, and enhance overall quality of life.",
-      image: "../../../src/assets/MainPage/Cards/StressManagment.png",
+      image: stressImage,
       duration: "60",
       unit: "bpm",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/StressManagment.png"
+      unit_img: stressIcon
     },
     {
       id: 5,
       title: "Social connection",
       description: "Strong social relationships and community connections are vital for mental health and longevity.",
-      image: "../../../src/assets/MainPage/Cards/SocialConnect.png",
+      image: socialImage,
       duration: "Feeling",
       unit: "better",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/SocialConnection.png"
+      unit_img: socialIcon
     },
     {
       id: 6,
       title: "Substance abuse",
       description: "Avoiding harmful substances and addressing addiction issues is crucial for maintaining optimal health.",
-      image: "../../../src/assets/MainPage/Cards/SubstanceAbuse.png",
+      image: substanceImage,
       duration: "62",
       unit: "Days",
-      unit_img: "../../../src/assets/MainPage/Cards/UnitIcon/SubstanceAbuse.png"
+      unit_img: substanceIcon
     }
   ];
 
