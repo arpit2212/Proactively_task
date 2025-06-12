@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+ import logo from '../../../src/assets/Logo/Logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo */}
         <div className="navbar-logo">
-          <img src="../../../src/assets/Logo/Logo.png" alt="ProVital Logo" className="logo-icon" />
+          <img src={logo} alt="ProVital Logo" className="logo-icon" />
           <span className="logo-text">ProVital</span>
         </div>
 
