@@ -73,28 +73,33 @@ The built files will be in the `dist` directory.
 
 ```
 Proactively_task/
-├── public/
-│   ├── vite.svg
-│   └── index.html
 ├── src/
-│   ├── components/
-│   │   ├── TaskCard.jsx
-│   │   ├── TaskForm.jsx
-│   │   ├── TaskList.jsx
-│   │   └── Header.jsx
-│   ├── hooks/
-│   │   └── useTasks.js
-│   ├── utils/
-│   │   └── localStorage.js
-│   ├── styles/
-│   │   └── main.css
-│   ├── App.jsx
+│   ├── assets/
+│   ├── Components/
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.css
+│   │   │   └── Navbar.jsx
+│   │   └── SearchForm/
+│   │       ├── SearchForm.css
+│   │       └── SearchForm.jsx
+│   ├── Pages/
+│   │   ├── HomePage/
+│   │   │   ├── HomePage.css
+│   │   │   └── HomePage.jsx
+│   │   └── MainPage/
+│   │       ├── MainPage.css
+│   │       └── MainPage.jsx
 │   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
 │   └── main.jsx
-├── package.json
-├── vite.config.js
+├── .gitignore
 ├── eslint.config.js
-└── README.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 ```
 
 ## 🔧 Configuration
