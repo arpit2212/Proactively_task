@@ -22,6 +22,15 @@ const HomePage = () => {
   // All images for mobile view (1, 2, 3, 4, 5, 6, 7, 8)
   const allImages = [image1, image2, image3, image4, image5, image6, image7, image8];
 
+  // Create seamless loop arrays - triple the images for smooth infinite scroll
+  const createInfiniteArray = (images) => {
+    return [...images, ...images, ...images];
+  };
+
+  const infiniteColumn1 = createInfiniteArray(column1Images);
+  const infiniteColumn2 = createInfiniteArray(column2Images);
+  const infiniteMobileImages = createInfiniteArray(allImages);
+
   return (
     <div className="homepage-container">
       {/* Desktop View */}
@@ -31,7 +40,7 @@ const HomePage = () => {
           {/* Column 1 - Top to Bottom */}
           <div className="column column-1">
             <div className="scroll-down">
-              {[...column1Images, ...column1Images, ...column1Images].map((img, index) => (
+              {infiniteColumn1.map((img, index) => (
                 <div key={`col1-${index}`} className="image-card">
                   <img src={img} alt={`Medical ${(index % 4) + 1}`} />
                 </div>
@@ -42,7 +51,7 @@ const HomePage = () => {
           {/* Column 2 - Bottom to Top */}
           <div className="column column-2">
             <div className="scroll-up">
-              {[...column2Images, ...column2Images, ...column2Images].map((img, index) => (
+              {infiniteColumn2.map((img, index) => (
                 <div key={`col2-${index}`} className="image-card">
                   <img src={img} alt={`Medical ${(index % 4) + 5}`} />
                 </div>
@@ -54,12 +63,12 @@ const HomePage = () => {
           <div className="main-content">
             <div className="form-container">
               <div className="header-section">
-               <h1 className="main-title">
-  Book an appointment with <span className="highlight-blue"> <br></br>lifestyle medicine</span> experts
-</h1>
-<p className="subtitle">
-  Optimize your lifestyle and reverse chronic diseases.
-</p>
+                <h1 className="main-title">
+                  Book an appointment with <span className="highlight-blue"><br />lifestyle medicine</span> experts
+                </h1>
+                <p className="subtitle">
+                  Optimize your lifestyle and reverse chronic diseases.
+                </p>
               </div>
 
               <SearchForm/>
@@ -73,8 +82,8 @@ const HomePage = () => {
         <div className="mobile-container">
           <div className="mobile-header">
             <h1 className="mobile-title">
-  Book an appointment with <span className="mobile-highlight"> <br></br>lifestyle medicine</span> experts
-</h1>
+              Book an appointment with <span className="mobile-highlight"><br />lifestyle medicine</span> experts
+            </h1>
             <p className="mobile-subtitle">
               Optimize your lifestyle and reverse chronic diseases.
             </p>
@@ -117,16 +126,15 @@ const HomePage = () => {
           {/* Mobile Horizontal Scrolling Images */}
           <div className="mobile-images">
             <div className="scroll-horizontal">
-              {[...allImages, ...allImages, ...allImages].map((img, index) => (
+              {infiniteMobileImages.map((img, index) => (
                 <div key={`mobile-${index}`} className="mobile-image-card">
-                  <img src={img} alt={`Medical ${(index % 4) + 1}`} />
+                  <img src={img} alt={`Medical ${(index % 8) + 1}`} />
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
